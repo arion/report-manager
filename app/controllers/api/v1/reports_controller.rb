@@ -11,8 +11,11 @@ class Api::V1::ReportsController < Api::V1::ApplicationController
   end
 
   def update
-    resource.update(permitted_params)
-    respond_with Report, json: resource
+    if resource.update(permitted_params)
+      render json: resource
+    else
+      respond_with resource
+    end
   end
 
   def destroy
