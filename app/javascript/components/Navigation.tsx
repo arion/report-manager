@@ -1,11 +1,11 @@
 import * as React from "react"
-import { Link, withRouter } from "react-router-dom"
+import { Link, withRouter, RouteComponentProps } from "react-router-dom"
 
 import { signOut } from "../utils/api";
 import { useDispatch, useGlobalState } from '../utils/state'
 import history from '../utils/history'
 
-const Navigation: FC<RouteComponentProps<{}>> = (props) => {
+const Navigation: React.FC<RouteComponentProps<{}>> = (props) => {
   const { user } = useGlobalState('account')
   const dispatch = useDispatch()
 

@@ -14,10 +14,10 @@ interface IForm {
 interface IProps {
   onSave: () => void,
   onCancel: () => void,
-  report: IForm,
+  report: IForm | {},
 }
 
-const ReportForm: FC<IProps> = (props) => {
+const ReportForm: React.FC<IProps> = (props) => {
   const dispatch = useDispatch()
 
   const [errors, setErrors] = React.useState([])

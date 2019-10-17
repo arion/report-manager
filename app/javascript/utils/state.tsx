@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import { IAction, initialState, reducer, IState } from './reducer'
+import { initialState, reducer, IState } from './reducer'
+import { IAction } from "./interfaces"
 
 const { createContext, useContext, useReducer } = React
 

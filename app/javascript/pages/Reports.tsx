@@ -14,7 +14,7 @@ const Reports: React.FC = () => {
 
   React.useEffect(() => {
     fetchReports(page)
-      .then((reports) => dispatch({ type: 'reports-loaded', reports, page }))
+      .then((reports) => dispatch({ type: 'reports-loaded', reports }))
   },[page, dispatch])
 
   return (
