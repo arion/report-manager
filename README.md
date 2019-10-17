@@ -1,24 +1,31 @@
-# README
+Тестовое задание. Приложение для загрузки отчетов, просмотра загруженных с возможностью редактирования.
+SPA или нет - на твой вкус.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backend: Rails
+Frontend: React + Redux
 
-Things you may want to cover:
+Нужно реализовать авторизацию пользователя (регистрация необязательна) без использования devise.
+Без авторизации нет доступа к основному приложению
 
-* Ruby version
+Screen 1:
+Нужно сделать форму для загрузки отчетов (title, description, file) и сохранять эти данные в БД (Postgres).
+Для данных файла необходимо добавить поле типа jsonb вида:
+  { original_filename: 'any_file.pdf', mime_type: 'application/pdf', size: 12345 },
+куда аплоадить сами файлы - непринципиально (s3, cloud или в какой-нибудь каталог приложения)
 
-* System dependencies
+Принимать файлы PDF, PNG, TXT, TIFF.
+Валидация по уникальному title.
+Валидация по длине стоки title (от 3 до 10)
+Валидации показывать над кнопкой submit.
 
-* Configuration
+Screen 2:
+Просмотр загруженных отчетов, c пагинацией по 10,
+сортировка по расширению файла в порядке PDF, TIFF, PNG, TXT.
 
-* Database creation
+Вьюха для каждого отчета должна отображать
+1. Title
+2. Description
+3. Filename (при клике скачивать файл)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Возможность редактирования title и description отчета.
+UI сверстать на свой вкус.
