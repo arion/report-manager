@@ -4,7 +4,7 @@ class Report < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   validates :author, presence: true
-  validates :file, presence: true
+  validates :file, presence: true, on: :create
   validates :title, uniqueness: true, length: { minimum: 3, maximum: 10 }
 
   mount_uploader :file, ReportUploader
